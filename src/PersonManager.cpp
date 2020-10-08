@@ -32,20 +32,20 @@ string PersonManager::readText() {
     archivo.close();
 }
 
-void PersonManager::saveBinary(ISaveBinaryPerson* savePerson) {
+void PersonManager::saveBinary(PersonList* savePerson) {
     ofstream archivo;
 
     try { archivo.open("ArchivoBinario.dat", ios::app | ios::binary); }
 
     catch (std::ifstream::failure a) { cout << "no se pudo abrir el archivo"; }
 
-    archivo.write((char *) &savePerson, sizeof(ISaveBinaryPerson));
+    archivo.write((char *) &savePerson, sizeof(PersonList));
 
     archivo.close();
 
 }
 
-void PersonManager::loadBinary(ISaveBinaryPerson* savePerson) {
+void PersonManager::loadBinary(PersonList* savePerson) {
     ifstream archivo;
 
     try { archivo.open("ArchivoBinario.dat", ios::in | ios::binary); }
@@ -55,7 +55,7 @@ void PersonManager::loadBinary(ISaveBinaryPerson* savePerson) {
         exit(1);
     }
 
-    archivo.read((char *) &savePerson, sizeof(ISaveBinaryPerson));
+    archivo.read((char *) &savePerson, sizeof(PersonList));
 
     archivo.close();
 }

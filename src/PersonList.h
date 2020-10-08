@@ -9,15 +9,13 @@
 #include "Person.h"
 #include <vector>
 #include "ISaveTexPerson.h"
-#include "ISaveBinaryPerson.h"
 
-class PersonList: public ISaveTexPerson, public ISaveBinaryPerson{
+
+class PersonList: public ISaveTexPerson{
 public:
     vector<Person>personList;
 
     PersonList();
-
-    PersonList(const vector<Person> &personList);
 
     const vector<Person> &getPersonList() const;
 
@@ -29,5 +27,4 @@ public:
 
     string saveDataTex() override;
 
-    string saveDataBinary() override;
 };

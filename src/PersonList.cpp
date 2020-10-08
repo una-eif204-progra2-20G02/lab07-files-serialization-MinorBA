@@ -7,8 +7,6 @@
 
 PersonList::PersonList() {}
 
-PersonList::PersonList(const vector<Person> &personList) : personList(personList) {}
-
 const vector<Person> &PersonList::getPersonList() const {
     return personList;
 }
@@ -36,15 +34,5 @@ string PersonList::saveDataTex() {
     {
         serialization = personList[i].serialization();
     }
-    json jsonPersonas;
-
-    jsonPersonas["Personas"] = {{" Personas: ",serialization}};
-
-    string personasSerializando = jsonPersonas.dump();
-
-    return personasSerializando;
-}
-
-string PersonList::saveDataBinary() {
-    return string();
+    return serialization;
 }

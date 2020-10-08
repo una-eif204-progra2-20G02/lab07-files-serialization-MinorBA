@@ -9,7 +9,7 @@
 
 #include <iostream>
 #include "ISaveTexPerson.h"
-#include "ISaveBinaryPerson.h"
+#include "PersonList.h"
 
 using namespace std;
 class PersonManager
@@ -17,6 +17,6 @@ class PersonManager
 public:
     void saveText(ISaveTexPerson* savePerson);
     string readText();
-    void saveBinary(ISaveBinaryPerson* savePerson);
-    void loadBinary(ISaveBinaryPerson* savePerson);
+    void saveBinary(PersonList* savePerson);
+    void loadBinary(PersonList* savePerson);
 };
