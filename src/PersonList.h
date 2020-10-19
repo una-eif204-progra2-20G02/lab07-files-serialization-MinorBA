@@ -8,10 +8,9 @@
 #endif //MY_PROJECT_NAME_PERSONLIST_H
 #include "Person.h"
 #include <vector>
-#include "ISaveTexPerson.h"
 
 
-class PersonList: public ISaveTexPerson{
+class PersonList{
 public:
     vector<Person>personList;
 
@@ -24,7 +23,4 @@ public:
     string toString();
 
     void inset(Person person);
-
-    string saveDataTex() override;
-
 };

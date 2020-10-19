@@ -27,12 +27,3 @@ string PersonList::toString() {
 void PersonList::inset(Person person) {
     personList.push_back(person);
 }
-
-string PersonList::saveDataTex() {
-    string serialization;
-    for (int i = 0; i < personList.size(); i++)
-    {
-        serialization = personList[i].serialization();
-    }
-    return serialization;
-}
